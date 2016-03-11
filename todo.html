@@ -6,6 +6,7 @@
 </head>
 <body>
 	<ul>
+		<li>Result in Console log</li>
 		<li>Type 'New' - Add A Todo</li>
 		<li>Type 'List' - List all Todos</li>
 		<li>Type 'Delete' -  Remove a Specific list</li>
@@ -13,7 +14,59 @@
 	</ul>
 
 	<script>
+		// Ask user what they want to do first, make sure that everything are lowercase
+		var usrPrompt = prompt('What do you want to do?').toLowerCase();
+		//console.log(usrPrompt);
+		
+		// Create empty array
+		var todos = [];
 
+		// Create conditional as long as the user did not type quit
+		while(usrPrompt !== 'quit'){
+
+			// If the user type new, means we have to insert the new list into the todos array
+			if(usrPrompt === 'new'){
+				// Call addTodo function
+				addTodo();
+			
+			// If the user type list, console log all the available list in todos
+			}else if(usrPrompt === 'list'){
+				// Call listTodo function
+				listTodo();
+			}else if(usrPrompt === 'delete'){
+				// Call deleteTodo function
+				deleteTodo();
+
+			}
+
+			usrPrompt = prompt('What do you want to do?').toLowerCase();
+
+		}
+
+		// Define functions to make the previous codes a bit lean
+		function listTodo(){
+				console.log('**********');
+				todos.forEach(function(todo, index){
+					console.log(index + ': ' + todo);
+				});
+				console.log('**********');
+		}
+
+		function addTodo(){
+				// Ask
+				var newTodos = prompt('What should be put in the list?');
+				// Put it into the array
+				todos.push(newTodos);
+		}
+
+		function deleteTodo(){
+				// Ask which index the user want to delete
+				var whichIndex = parseInt(prompt('Which index do you want to delete?', '0'), 10);
+				todos.splice(whichIndex, 1);
+		}
+
+		// Let the user know that they have quited the app
+		console.log('GoodBye');
 	</script>
 </body>
 </html>
