@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenges 1</title>
+</head>
+<body>
+	<ul>
+		<li>Print reverse parameter</li>
+		<li>Check if all elements in the array are exactly the same</li>
+		<li>Sum all the num total in the array</li>
+	</ul>
+
+	<script>
+		var printReverse = function(arr){
+			for(var i = arr.length - 1; i >= 0; i--){
+				console.log(arr[i]);
+			}
+		};
+
+		printReverse([1,2,3,4,5,6,7]);
+
+		// isUniform
+		var isUniform = function(uniform){
+
+			// We want to check if all the elements inside the array are the same
+			// We can start by captured the first element
+			var first = uniform[0];
+
+			// Then compare to the rest, if during the loop found unmatch, straight away stop the script
+			// Since we do not want to waste the script, we can skip the first element in array, since
+			// that element is the same as the first variable
+			for(var i = 1; i < uniform.length; i++){
+				// During the loop, create an if statement if the i is the same as the var first
+				if(uniform[i] !== first){
+					return false;
+				}
+			}
+
+			// if everything dandy we can exit this loop and end the function by return true;
+			return true;
+		};
+
+		// Sum Total
+		var sumArray = function(sumSum){
+			var total = 0;
+
+			sumSum.forEach(function(element){
+				total += element;
+			});
+
+			return total;
+		};
+
+		// Find the max number in array
+		var max = function(arrMax){
+
+			// Capture the first element, since we want to compare it to the rest
+			var max = arrMax[0];
+
+			// Usual for loop the elements
+			for(var i = 1; i < arrMax.length; i++){
+				// Create a conditional if the elements during the loop is bigger than the var that we captured is bigger
+				if(arrMax[i] > max){
+					// assign that element to the var
+					max = arrMax[i];
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>
