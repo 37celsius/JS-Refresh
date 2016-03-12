@@ -47,7 +47,7 @@
 		};
 
 		// Other way
-		movieDB.forEach(function(movie){
+		var printMovies = function(movie){
 			var result = 'You have ';
 
 			if(movie.watch){
@@ -58,7 +58,11 @@
 
 			result += '" ' + movie.title + ' "' + ' - ';
 			result += movie.star + ' stars';
-			console.log(result);
+			return result;
+		};
+
+		movieDB.forEach(function(o){
+			console.log(printMovies(o));
 		});
 	</script>
 </body>
