@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create custom forEach Function</title>
+</head>
+<body>
+	<h1>Result in console.log</h1>	
+
+	<script>
+		var movieDB = [
+		  {
+		    title: 'Evangelion',
+		    watch: true,
+		    star: 5
+		  },
+		  {
+		    title: 'Man of Steel',
+		    watch: true,
+		    star: 2.5
+		  },
+		  {
+		    title: 'TMNT',
+		    watch: false,
+		    star: 3
+		  },
+		  {
+		    title: 'Batman',
+		    watch: true,
+		    star: 4.5
+		  },
+		  {
+		    title: 'Lorde',
+		    watch: false,
+		    star: 1.5
+		  }
+		];
+
+		var printMovieDB = function(i){
+			i.forEach(function(x){
+				if(x.watch !== true){
+					console.log('You have not seen ' + x.title + ' - ' + x.star + ' stars');
+				} else {
+					console.log('You have watched ' + x.title + ' - ' + x.star + ' stars');
+				}
+			});
+		};
+
+		// Other way
+		movieDB.forEach(function(movie){
+			var result = 'You have ';
+
+			if(movie.watch){
+				result += 'watched ';
+			}else{
+				result += 'not seen ';
+			}
+
+			result += '" ' + movie.title + ' "' + ' - ';
+			result += movie.star + ' stars';
+			console.log(result);
+		});
+	</script>
+</body>
+</html>
