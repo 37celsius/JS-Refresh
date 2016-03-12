@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create custom forEach Function</title>
+</head>
+<body>
+	<h1>Comeback after finishing Object and Prototype refresh</h1>	
+
+	<script>
+		var myForEach = function(arr, func){
+			// Loop through array
+			for(var i = 0; i < arr.length; i++){
+				// Call func for each item in array
+				// To register the data inside the array, we need to put the data inside the func
+				func(arr[i]);
+			}
+		};
+	</script>
+</body>
+</html>
