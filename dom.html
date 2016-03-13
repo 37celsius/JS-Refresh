@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM Manipulation</title>
+	<style>
+		.big{
+			background: red;
+			border: 1px solid black;
+			font-style: italic;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hello</h1>
+	<ul>
+		<li id="highlight">List 1</li>
+		<li class="bolded">List 2</li>
+		<li class="bolded">List 3</li>
+		<li class="special">List 4</li>
+		<li class="special">List 5</li>
+		<li class="special">List 6</li>
+		<li class="special">List 7</li>
+	</ul>
+	<div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, accusantium qui debitis architecto accusamus praesentium nostrum ad eos? Odit animi mollitia, sed dolorum unde quibusdam nisi. Autem necessitatibus fugiat, maiores?</p>
+	</div>
+
+	<p id="changeText">
+		This <strong>awesome</strong> text will be counting <span id='counting'></span> forever
+	</p>
+
+	<script>
+		var tagId = document.getElementById('highlight');
+		var tagClasses = document.getElementsByClassName('bolded');
+		var tags = document.getElementsByTagName('li');
+
+		// New: querySelector, is easier method that returns the first element that matches a given CSS-style selector
+		// The below code will select the first element that have the class name bolded
+		var queryTag = document.querySelector('.bolded');
+
+		// If you want to get querySelector to select all element targeted, use querySelectorAll
+		var queryTagsAll = document.querySelectorAll('.special');
+
+		console.log(tagClasses);
+		console.log(tagClasses[1]);
+
+		console.log(tags);
+
+		console.log(queryTag);
+		console.log(queryTagsAll);
+
+		var bigEl = document.querySelector('div');
+
+		setInterval(function(){
+			bigEl.classList.toggle('big');
+		},1000);
+
+		// Practice using other method beside querySelector
+		var changeText = document.getElementById('counting');
+		var startCount = 0;
+
+		setInterval(function(){
+			changeText.innerHTML = startCount;
+			startCount++;
+		},1000);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Auto Hide Sticky Header</title>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style>
+		body{
+			background: purple;
+			padding: 0;
+			margin: 0;
+		}
+
+		section {
+			padding-top: 7em;
+			color: white;
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.header {
+			height: 7.5em;
+			background: white;
+			text-align: center;
+			width: 100%;
+			position: fixed;
+			z-index: 1000;
+			top: 0;
+			left: 0;
+
+			-webkit-box-shadow: 0 0.063em 0.25em rgba( 37, 50, 55, .25 ); /* 1 4 */
+			box-shadow: 0 0.063em 0.25em rgba( 37, 50, 55, .25 ); /* 1 4 */
+
+			
+			-webkit-transition-duration: .5s;
+			transition-duration: .5s;
+
+			-webkit-transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+			transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+
+			
+			-webkit-transition-property: -webkit-transform, height, padding-top, padding-left;
+			transition-property: transform, height, padding-top, padding-left;
+		}
+
+		.header--hidden {
+			-webkit-transform: translateY( -100% );
+			-ms-transform: translateY( -100% );
+			transform: translateY( -100% );
+		}
+
+		.header--narrow {
+			height: 5em; /* 80 */
+		}
+	</style>
+</head>
+<body>
+	
+	<header class='header' role='banner'>
+		<h1>This is the header</h1>
+	</header>
+	<section>
+		<h2>This is the header of the body</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum similique sed odit doloremque esse, a architecto eum voluptates minima, ducimus nulla animi sint cum, et modi ab quae facilis adipisci?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente incidunt aliquid eum et ullam dolore! Nisi consectetur, praesentium atque a dolorum eos saepe at, beatae sit mollitia voluptatem voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione id impedit deserunt in eveniet distinctio deleniti, voluptatem esse asperiores, sequi ipsum nostrum, totam debitis odio doloribus adipisci dolores aut omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laborum tenetur natus dolor quo modi a ea nisi aperiam. Delectus cumque assumenda sint qui cum esse, atque autem eos veritatis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum architecto laudantium placeat dolor deleniti, earum incidunt! Pariatur recusandae reprehenderit ad incidunt sit quas, dolores necessitatibus, soluta, illum aperiam cupiditate amet!</p>
+	</section>
+
+	<script src='autoHideHeader.js'></script>
+</body>
+</html>
