@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>More DOM Manipulation</title>
+	<style>
+		.big{
+			background: red;
+			border: 1px solid black;
+			font-style: italic;
+			text-align: center;
+		}
+	</style>
+</head>
+<body id="body">
+	<button>Click me</button>
+
+	<script>
+		var btn = document.querySelector('button');
+		var bdy = document.getElementById('body');
+		var isPurple = false;
+
+		btn.addEventListener('click', function(){
+			if(isPurple){
+				bdy.style.background = 'white';
+			}else{
+				bdy.style.background = 'purple';
+			}
+
+			isPurple = !isPurple;
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
