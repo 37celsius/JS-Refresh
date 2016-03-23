@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Score Keeper - Retry</title>
+	<style>
+		.green {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>Score Keeper</h1>
+	<h2><span id="p1Score">0</span> to <span id="p2Score">0</span></h2>
+	<p>Playing to <span id="totalPlay">5</span></p>
+	<input type="number">
+	<button id="p1Btn">Player 1</button>
+	<button id="p2Btn">Player 2</button>
+	<button id="reset">Reset</button>
+
+	<script>
+		var gameOver = false;
+
+		var p1Btn = document.querySelector('#p1Btn');
+		var p2Btn = document.querySelector('#p2Btn');
+		var resetBtn = document.querySelector('#reset');
+		var input = document.querySelector('input');
+		var totalPlayDisplay = document.querySelector('#totalPlay');
+
+		var p1ScoreDisplay = document.getElementById('p1Score');
+		var p2ScoreDisplay = document.getElementById('p2Score');
+
+		var score = 5;
+
+		var p1Score = 0;
+		var p2Score = 0;
+
+		p1Btn.addEventListener('click', function(){
+
+			if(!gameOver){
+
+				p1Score++;
+
+				if( p1Score === score ){
+					p1ScoreDisplay.classList.add('green');
+					gameOver = true;
+				}
+
+				p1ScoreDisplay.textContent = p1Score;
+			
+			}
+		});
+
+		p2Btn.addEventListener('click', function(){
+
+			if(!gameOver){
+
+				p2Score++;
+
+				if( p2Score === score ){
+					p2ScoreDisplay.classList.add('green');
+					gameOver = true;
+				}
+
+				p2ScoreDisplay.textContent = p2Score;
+			
+			}
+		});
+
+		resetBtn.addEventListener('click', function(){
+			reset();
+		});
+
+		input.addEventListener('change', function(){
+			totalPlayDisplay.textContent = this.value;
+			score = parseInt(this.value);
+			reset();
+		});
+
+		var reset = function(){
+			p1Score = 0;
+			p2Score = 0;
+			p1ScoreDisplay.textContent = p1Score;
+			p2ScoreDisplay.textContent = p2Score;
+			p1ScoreDisplay.classList.remove('green');
+			p2ScoreDisplay.classList.remove('green');
+			gameOver = false;
+		};
+	</script>
+</body>
+</html>
+
+
+
+
